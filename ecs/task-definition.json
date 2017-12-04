@@ -1,7 +1,7 @@
 [
   {
     "environment": [],
-    "name": "simple-app",
+    "name": "${var.container-name}",
     "image": "kcoleman731/amazon-ecs-sample",
     "cpu": 10,
     "memory": 500,
@@ -25,7 +25,7 @@
     "memory": 500,
     "volumesFrom": [
       {
-        "sourceContainer": "simple-app"
+        "sourceContainer": "${var.container-name}"
       }
     ],
     "entryPoint": [

@@ -8,6 +8,6 @@ resource "aws_ecs_service" "ecs-service" {
   load_balancer {
     target_group_arn = "${var.ecs-target-group-arn}"
     container_port = 80
-    container_name = "simple-app"
+    container_name = "${var.container-name}"
   }
 }

@@ -17,3 +17,7 @@ variable "region" {
 variable "tag_prefix" {
   default = "ecs1"
 }
+
+variable "container_name" {
+  default = "rest1"
+}

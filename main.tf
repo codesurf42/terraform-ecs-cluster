@@ -33,4 +33,5 @@ module "ecs" {
   ecs-target-group-arn = "${module.ec2.ecs-target-group-arn}"
   ecs-service-role-arn = "${module.iam.ecs-service-role-arn}"
   tag_prefix = "${var.tag_prefix}"
+  container-name = "${var.container_name}"
 }
