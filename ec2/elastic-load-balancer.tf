@@ -20,6 +20,10 @@ resource "aws_alb_target_group" "ecs-target_group" {
         protocol            = "HTTP"
         timeout             = "5"
     }
+
+    depends_on = [
+        "aws_alb.ecs-load-balancer"
+    ]
 }
 
 resource "aws_alb_listener" "alb-listener" {
