@@ -1,3 +1,5 @@
+// you can override these default variables with your local ones by using e.g. variables_override.tf
+
 variable "ecs-cluster-name" {
   description = "The name for the cluster."
   default = "ecs-rest1"
