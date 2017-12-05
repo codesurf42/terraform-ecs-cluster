@@ -1,8 +1,8 @@
 [
   {
     "environment": [],
-    "name": "${var.container-name}",
-    "image": "kcoleman731/amazon-ecs-sample",
+    "name": "${container_name}",
+    "image": "strm/helloworld-http",
     "cpu": 10,
     "memory": 500,
     "portMappings": [
@@ -11,30 +11,6 @@
         "hostPort": 80
       }
     ],
-    "entryPoint": [
-      "/usr/sbin/apache2",
-      "-D",
-      "FOREGROUND"
-    ],
     "essential": true
-  },
-  {
-    "name": "busybox",
-    "image": "busybox",
-    "cpu": 10,
-    "memory": 500,
-    "volumesFrom": [
-      {
-        "sourceContainer": "${var.container-name}"
-      }
-    ],
-    "entryPoint": [
-      "sh",
-      "-c"
-    ],
-    "command": [
-      "/bin/sh -c \"while true; do /bin/date > /var/www/my-vol/date; sleep 1; done\""
-    ],
-    "essential": false
   }
 ]
